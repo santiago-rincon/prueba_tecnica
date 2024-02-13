@@ -55,6 +55,10 @@ export class UserPage implements OnInit {
             this.toastr.error('El usuario no exite', 'Error', this.toastOptions);
             this.loading = false;
             this.router.navigate(['/users']);
+          } else {
+            this.toastr.error('No se ha podido obtener el usuario', 'Error', this.toastOptions);
+            this.loading = false;
+            this.router.navigate(['/users']);
           }
         }
       );
@@ -65,6 +69,7 @@ export class UserPage implements OnInit {
       this.toastr.error('Completa todos los campos', 'Error', this.toastOptions);
       return;
     }
+    this.loading = true;
     const newUser: User = {
       fullName: this.userForm.get('fullName')?.value ?? '',
       cc: Number(this.userForm.get('cc')?.value),
@@ -90,7 +95,7 @@ export class UserPage implements OnInit {
           this.router.navigate(['/users']);
         },
         () => {
-          this.toastr.error('Ha ocurrido un error inesperado', 'Error', this.toastOptions);
+          this.toastr.error('No se ha podido crear el usuario', 'Error', this.toastOptions);
           this.loading = false;
         }
       );
