@@ -1,0 +1,29 @@
+<div
+  class="py-10 px-20 flex justify-between items-center min-h-[86vh] flex-col gap-y-6 max-w-4xl mx-auto">
+  <h2 class="font-bold text-3xl uppercase text-black/80 dark:text-white/80">
+    Lista de todos los usuarios
+  </h2>
+  <app-table [Users]="Users" />
+  <a
+    routerLink="/create"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    Crear nuevo usuario
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-user-plus"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+      <path d="M16 19h6" />
+      <path d="M19 16v6" />
+      <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+    </svg>
+  </a>
+</div>
